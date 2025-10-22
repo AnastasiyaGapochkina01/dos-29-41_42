@@ -2,19 +2,19 @@
   "builders": [
     {
       "type":      "yandex",
-      "token":     ${YC_TOKEN},
-      "folder_id": ${YC_FOLDER_ID},
-      "zone":      "ru-central1-b",
+      "token":     "${YC_TOKEN}",
+      "folder_id": "${YC_FOLDER_ID}",
+      "zone":      "${YC_ZONE}",
 
-      "image_name":        "debian-12-nginx-{{isotime | clean_resource_name}}",
-      "image_family":      "debian-web-server",
-      "image_description": "my custom debian with nginx",
+      "image_name":        "${IMG_NAME}-{{isotime | clean_resource_name}}",
+      "image_family":      "${IMG_FAMILY}",
+      "image_description": "${DESCRIPTION}",
 
       "source_image_family": "debian-12",
-      "subnet_id":           "e2lcmpigub6jp4jl52n7",
+      "subnet_id":           "${SUBNET_ID}",
       "use_ipv4_nat":        true,
       "disk_type":           "network-hdd",
-      "ssh_username":        "debian",
+      "ssh_username":        "${USERNAME}",
       "ssh_private_key_file": "/home/anestesia/.ssh/id_ed25519"
     }
   ],
